@@ -1,0 +1,66 @@
+﻿@model Class_performance.Donar
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3 align="center">Delete Donar Name-[@Html.DisplayFor(model => model.Name)]</h3>
+<hr/><hr/>
+<h3>Are you sure you want to delete these information?</h3>
+<div>
+    
+    <hr />
+    <dl class="media-middle">
+        <dt >
+            @Html.DisplayNameFor(model => model.Name):
+            @Html.DisplayFor(model => model.Name)
+        </dt>
+
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone):
+            @Html.DisplayFor(model => model.Phone)
+        </dt>
+
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email):
+            @Html.DisplayFor(model => model.Email)
+        </dt>
+
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount):
+            @Html.DisplayFor(model => model.Amount)
+        </dt>
+
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address):
+            @Html.DisplayFor(model => model.Address)
+        </dt>
+
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment):
+            @Html.DisplayFor(model => model.Comment)
+        </dt>
+
+        
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> 
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning" })
+        </div>
+    }
+</div>
