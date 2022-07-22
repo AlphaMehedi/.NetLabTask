@@ -1,0 +1,43 @@
+﻿@model Demo_AOwn.Context.Receiver
+@{
+    ViewBag.Title = "Receiver";
+}
+<style>
+    .error {
+        color: red;
+    }
+</style>
+<h3 align="center">Receiver</h3>
+@using (Html.BeginForm("AddReceiver","Receiver",FormMethod.Post))
+            {
+                <div class="container">
+                    <div class="form-group">
+                        @Html.HiddenFor(x=>x.ID)
+                        <label>Name</label>
+                        @Html.ValidationMessageFor(x => x.Name, "", new { @class = "error" })
+                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        @Html.ValidationMessageFor(x => x.Phone, "", new { @class = "error" })
+                        @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Request Amount</label>
+                        @Html.ValidationMessageFor(x => x.RAmount, "", new { @class = "error" })
+                        @Html.TextBoxFor(x => x.RAmount, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Comment</label>
+                        @Html.ValidationMessageFor(x => x.Comment, "", new { @class = "error" })
+                        @Html.TextBoxFor(x => x.Comment, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="reset" class="btn btn-danger">Reset</button>
+                        @Html.ActionLink("Back To List", "ReceiverList", "Receiver", null, new { @class="btn btn-warning" })
+                    </div>
+
+                </div>
+            }
+
